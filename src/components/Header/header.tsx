@@ -27,20 +27,20 @@ const Header = () => {
                         <div className={s.analyticsItem}>
                             <div className={s.text}>Конверсия в заказ <span className={s.red}>67%</span></div>
                             <div className={s.progressBar}>
-                                <div className={s.progress + ' ' + s. red}></div>
+                                <div className={s.progress + ' ' + s.red}></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className={s.right}>
-                    <FontAwesomeIcon className={s.search} icon={faSearch}/>
+                    <FontAwesomeIcon className={s.search } icon={faSearch}/>
                     <div className={s.userData}>
                         <div className={s.name}>
                             ИП Сидорова Александра Михайловна
                             <FontAwesomeIcon icon={faChevronDown}/>
                         </div>
                         <div className={s.photo}>
-                            <img src={photo}/>
+                            <img alt='avatar' src={photo}/>
                             <FontAwesomeIcon icon={faChevronDown}/>
                         </div>
                     </div>

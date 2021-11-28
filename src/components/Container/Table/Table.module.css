@@ -1,0 +1,106 @@
+button{
+    cursor: pointer;
+}
+.container{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+.tr{
+    padding: 16px 40px 16px 0;
+    border-bottom: 1px solid #EAF0FA;
+}
+ td:last-child{
+    text-align: right;
+}
+ th:last-child{
+    text-align: right;
+}
+ th{
+     padding: 18px;
+     color: #899CB1;
+ }
+td{
+    padding: 18px;
+    border-top: 1px solid #EAF0FA;
+    font-size: 15px;
+    color: #122945;
+    vertical-align: center;
+
+}
+.source{
+    color: #5E7793;
+    font-size: 15px;
+}
+.type svg{
+    color: #005FF8;
+}
+.type.green svg{
+    color: #28A879;
+
+
+}
+.type.red svg{
+    color: #EA1A4F;
+}
+.type.inner svg{
+    transform: rotate(45deg);
+}
+.type.outer svg{
+
+    transform: rotate(225deg);
+}
+.user{
+}
+.rating svg{
+    font-size: 8px;
+    margin-right: 2px;
+    color: #ADBFDF;
+}
+.rating button{
+    font-size: 14px;
+    background-color: #D8E4FB;
+    margin-left: 8px;
+
+    padding: 6px 8px;
+    border: 1px solid #ADBFDF;
+    border-radius: 4px;
+
+}
+.rating.green svg{
+    color: #28A879;
+}
+.rating.red svg{
+    color: #EA1A4F;
+}
+
+
+button.share{
+    border: 1px solid #002CFB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-style: normal;
+    padding: 9px 24px 11px;
+    color: #005FF8;
+    font-weight: 500;
+    margin-left: 0;
+    background-color: transparent;
+
+}
+button.green{
+    color: #00A775;
+    background-color: #DBF8EF;
+    border-color: #00A775;
+}
+.rating.red button{
+    color: #EA1A4F;
+    background-color: #FEE9EF;
+    border-color: #EA1A4F;
+}
+.rating.noScript{
+    color: #EA1A4F;
+}

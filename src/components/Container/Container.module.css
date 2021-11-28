@@ -1,0 +1,110 @@
+.mainContainer{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.paginatorBalance{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.iconBtn__wrap{
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    border: none;
+    display: flex;
+}
+.balance{
+    display: flex;
+    align-items: center;
+    padding: 9px 12px;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 48px;
+
+}
+.money{
+    font-weight: 600;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+}
+.balanceText{
+
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.balanceText__helper{
+    color: #899CB1;
+}
+.iconBtn__wrap{
+    color: #005FF8;
+    font-size: 22px;
+}
+.paginator{
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+.paginator .iconBtn{
+    font-size: 10px;
+    color: #ADBFDF;
+}
+.paginator span{
+    color: #005FF8;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+
+}
+.paginator .calendar{
+    font-size: 18px;
+    margin-right: 8px;
+}
+.paginator .prev{
+    margin-right: 21px;
+    background-color: transparent;
+    border: none;
+}
+.paginator .next{
+    margin-left: 21px;
+    background-color: transparent;
+    border: none;
+}
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #5E7793;
+
+    margin-top: 34px;
+}
+.search{
+    display: flex;
+    align-items: center;
+}
+.search svg{
+    margin-right: 8px;
+    color: #ADBFDF;
+    font-size: 16px;
+}
+.filters{
+    display: flex;
+    align-items: center;
+}
+.filterBox{
+    margin-right: 36px;
+    cursor: pointer;
+
+}
+.filterBox svg{
+    margin-left: 8px;
+    font-size: 10px;
+    color: #ADBFDF;
+}
