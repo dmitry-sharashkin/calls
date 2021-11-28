@@ -9,6 +9,7 @@ button{
     text-align: left;
     font-size: 14px;
     border-collapse: collapse;
+    box-shadow: 0px 4px 5px #E9EDF3;
 }
 .tr{
     padding: 16px 40px 16px 0;

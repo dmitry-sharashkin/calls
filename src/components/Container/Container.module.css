@@ -76,6 +76,12 @@
     background-color: transparent;
     border: none;
 }
+.paginator button:hover,
+.paginator span:hover svg,
+.paginator span:hover{
+    color: #005FF8;
+    cursor: pointer;
+}
 .controls{
     display: flex;
     justify-content: space-between;
@@ -98,6 +104,9 @@
     display: flex;
     align-items: center;
 }
+.filters .filterBox:last-child {
+    margin-right: 0;
+}
 .filterBox{
     margin-right: 36px;
     cursor: pointer;
@@ -107,4 +116,10 @@
     margin-left: 8px;
     font-size: 10px;
     color: #ADBFDF;
+}
+.filterBox:hover,
+.filterBox:hover svg,
+.filterBox.active,
+.filterBox.active svg{
+    color: #005FF8;
 }
