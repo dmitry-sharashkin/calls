@@ -39,6 +39,10 @@
     font-size: 14px;
     margin-right: 10px;
 }
+.balance:hover .balanceText,
+.balance:hover .iconBtn__wrap .iconBtn{
+color: #0000F4;
+}
 .balanceText__helper{
     color: #899CB1;
 }

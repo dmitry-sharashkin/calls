@@ -22,16 +22,19 @@ button{
     text-align: right;
 }
  th{
-     padding: 18px;
+     padding: 18px 10px;
      color: #899CB1;
  }
 td{
-    padding: 18px;
+    padding: 18px 10px;
     border-top: 1px solid #EAF0FA;
     font-size: 15px;
     color: #122945;
     vertical-align: center;
 
+}
+td:last-child{
+    width: 40%;
 }
 .source{
     color: #5E7793;
@@ -86,7 +89,7 @@ button.share{
     border-radius: 4px;
     font-style: normal;
     padding: 9px 24px 11px;
-    color: #005FF8;
+    color: #002CFB;
     font-weight: 500;
     margin-left: 0;
     background-color: transparent;
