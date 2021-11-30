@@ -3,7 +3,7 @@ import s from './Container.module.css'
 import {faPlusCircle, faChevronRight, faChevronLeft, faSearch, faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCalendar} from "@fortawesome/free-regular-svg-icons";
-import Table from "./Table/Table";
+import TableContainer from "./Table/TableContainer";
 
 const Container = () => {
     return (
@@ -59,7 +59,7 @@ const Container = () => {
                 </div>
             </div>
 
-            <Table/>
+            <TableContainer/>
         </main>
     )
 }

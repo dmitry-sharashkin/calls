@@ -22,19 +22,16 @@ button{
     text-align: right;
 }
  th{
-     padding: 18px 10px;
+     padding: 18px;
      color: #899CB1;
  }
 td{
-    padding: 18px 10px;
+    padding: 18px;
     border-top: 1px solid #EAF0FA;
     font-size: 15px;
     color: #122945;
     vertical-align: center;
 
-}
-td:last-child{
-    width: 40%;
 }
 .source{
     color: #5E7793;
@@ -43,12 +40,12 @@ td:last-child{
 .type svg{
     color: #005FF8;
 }
-.type.green svg{
+.type svg.green{
     color: #28A879;
 
 
 }
-.type.red svg{
+.type svg.red{
     color: #EA1A4F;
 }
 .type.inner svg{
