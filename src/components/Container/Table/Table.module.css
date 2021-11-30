@@ -55,7 +55,9 @@ td{
 
     transform: rotate(225deg);
 }
-.user{
+.user img{
+    width: 32px;
+    height: 32px;
 }
 .rating svg{
     font-size: 8px;

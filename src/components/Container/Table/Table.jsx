@@ -3,13 +3,14 @@ import s from './Table.module.css'
 import {faCircle, faArrowDown} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import avatar from "../../../assets/avatar.png"
-import Row from "./row";
+import Rows from "./row";
 
 const Table = (props) => {
     const calls = props.calls
 
     return (
         <table className={s.container}>
+            <tbody>
             <tr className={s.columns}>
                 <th>Тип</th>
                 <th>Время</th>
@@ -28,7 +29,7 @@ const Table = (props) => {
                     19:00
                 </td>
                 <td className={s.user}>
-                        <img src={avatar}/>
+                    <img src={avatar}/>
 
                 </td>
                 <td className={s.call}>
@@ -154,8 +155,8 @@ const Table = (props) => {
                     12:06
                 </td>
             </tr>
-            <Row {...props}/>
-
+            <Rows {...props}/>
+            </tbody>
         </table>
     )
 }

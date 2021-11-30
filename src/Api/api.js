@@ -8,8 +8,7 @@ instance.defaults.headers.common['Authorization'] = `Bearer qwerty123`
 
 export const callsAPI = {
     getCalls(){
-        return  instance.post(`/getList?date_start=2021-11-28&date_end=2021-11-30&in_out=1`).then(res => res.data)
-        console.log('s')
+        return  instance.post(`/getList?date_start=2021-11-25&date_end=2021-11-28`).then(res => res.data)
     },
 
 }
