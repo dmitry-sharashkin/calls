@@ -1,3 +1,4 @@
+
 .mainContainer{
     max-width: 1440px;
     margin: 0 auto;
@@ -104,6 +105,7 @@ color: #0000F4;
     color: #ADBFDF;
     font-size: 16px;
 }
+
 .filters{
     display: flex;
     align-items: center;
@@ -115,11 +117,40 @@ color: #0000F4;
     margin-right: 36px;
     cursor: pointer;
 
+    position: relative;
+
 }
 .filterBox svg{
     margin-left: 8px;
     font-size: 10px;
     color: #ADBFDF;
+}
+.d svg{
+    transform: rotate(180deg);
+}
+ .buttonsContainer{
+    color: red;
+    box-shadow: 0px 0px 26px rgba(233, 237, 243, 0.8);
+    background-color: white;
+     position: absolute;
+     top: calc(100% + 8px);
+     right: 0;
+     border: 1px solid #EAF0FA;
+     border-radius: 4px;
+}
+ .buttonsContainer button{
+     display: block;
+     padding: 10px 20px;
+     background-color: transparent;
+     font-size: 14px;
+     margin:0;
+     color: #122945;
+     border: none;
+     width: 100%;
+     text-align: left;
+ }
+.buttonsContainer button:hover{
+background-color: rgba(0,95,248,0.13);
 }
 .filterBox:hover,
 .filterBox:hover svg,

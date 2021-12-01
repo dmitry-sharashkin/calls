@@ -15,6 +15,10 @@ button{
     padding: 16px 40px 16px 0;
     border-bottom: 1px solid #EAF0FA;
 }
+.tr:hover{
+    background-color: rgba(212, 223, 243, 0.17);
+    cursor: pointer;
+}
  td:last-child{
     text-align: right;
 }

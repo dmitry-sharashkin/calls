@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import s from "./Table.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 
-const Rows = ({calls}) => {
+const Rows = ({calls, num}) => {
     function transformTime(sec) {
         if(sec >= 3600){
             let hours = Math.floor(sec / 60 / 60);
@@ -21,11 +21,11 @@ const Rows = ({calls}) => {
         return sec
     }
 
-    console.log(calls)
     return (
-        calls.map(obj => <tr className={s.tr}>
+
+        calls.filter(obj => num === true||num===obj.in_out).map(obj => <tr key={obj.id} className={s.tr}>
             {(obj.in_out === '1')
-                ? <td className={s.type + ' ' + s.outer}>
+                ? <td  className={s.type + ' ' + s.outer}>
                     {(obj.status === 'Дозвонился') ? <FontAwesomeIcon icon={faArrowDown} className={s.green}/> :
                         <FontAwesomeIcon icon={faArrowDown} className={s.red}/>
                     }
@@ -45,15 +45,13 @@ const Rows = ({calls}) => {
 
             </td>
             <td className={s.call}>
-                {obj.from_number}
+                {'+' + obj.from_number}
                 {/*{obj.from_number || obj.person_name + ' ' + obj.person_surname}*/}
             </td>
             <td className={s.source}>
-                Санкт-Петербург,<br/>
-                источник в три <br/> строки
             </td>
             <td className={s.rating}>
-                <button className={s.share}>Распознать</button>
+                <button  className={s.share}>Распознать</button>
             </td>
             <td className={s.duration}>
                 {transformTime(obj.time)}
