@@ -1,11 +1,12 @@
 import React from "react";
 import Paginator from "./Paginator";
 import {connect} from "react-redux";
+import {getCallsList} from "../../../redux/calls-reducer";
 
-const PaginatorContainer = () => {
+const PaginatorContainer = (props) => {
     return(<>
-        <Paginator/>
+        <Paginator {...props}/>
     </>)
 }
 
-export default connect(null,{})(PaginatorContainer)
+export default connect(null,{getCallsList})(PaginatorContainer)
