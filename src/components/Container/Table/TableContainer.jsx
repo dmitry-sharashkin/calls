@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import Table from "./Table";
-import {getCallsList, setFilteredCallsList} from "../../../redux/calls-reducer";
+import {getCallsList, getRecord,} from "../../../redux/calls-reducer";
 
 const TableContainer = (props) => {
 
@@ -14,4 +14,4 @@ const TableContainer = (props) => {
 const mapStateToProps = (state) => ({
     calls: state.calls.calls
 })
-export default connect(mapStateToProps, {getCallsList,setFilteredCallsList})(TableContainer)
+export default connect(mapStateToProps, {getCallsList,getRecord})(TableContainer)

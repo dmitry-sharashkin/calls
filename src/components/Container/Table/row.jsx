@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {} from "react";
 import s from "./Table.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 
-const Rows = ({calls, num}) => {
+const Rows = ({calls, num, getRecord,record}) => {
+     
     function transformTime(sec) {
         if(sec >= 3600){
             let hours = Math.floor(sec / 60 / 60);
@@ -23,7 +24,7 @@ const Rows = ({calls, num}) => {
 
     return (
 
-        calls.filter(obj => num === true||num===obj.in_out).map(obj => <tr key={obj.id} className={s.tr}>
+        calls.filter(obj => num === true||num===obj.in_out).map(obj => <tr key={obj.id}   className={s.tr}>
             {(obj.in_out === '1')
                 ? <td  className={s.type + ' ' + s.outer}>
                     {(obj.status === 'Дозвонился') ? <FontAwesomeIcon icon={faArrowDown} className={s.green}/> :
@@ -51,7 +52,7 @@ const Rows = ({calls, num}) => {
             <td className={s.source}>
             </td>
             <td className={s.rating}>
-                <button  className={s.share}>Распознать</button>
+                <button onClick={()=>getRecord(obj.record,obj.partnership_id)} className={s.share}>Распознать</button>
             </td>
             <td className={s.duration}>
                 {transformTime(obj.time)}
