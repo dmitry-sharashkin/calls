@@ -5,28 +5,26 @@ import Controls from "./Controlls";
 
 const Table = (props) => {
 
-    const [num,setNum] = useState(true);
-    console.log(props.record)
+
+
 
     return (
         <>
-            <Controls setNum={setNum}/>
-
-            {/*<audio src={} ></audio>*/}
+            <Controls filterInOutCalls={props.filterInOutCalls}/>
 
 
             <table className={s.container}>
-                <tbody>
+                <thead>
                 <tr className={s.columns}>
                     <th>Тип</th>
                     <th>Время</th>
                     <th>Сотрудник</th>
                     <th>Звонок</th>
-                    <th>Источник</th>
-                    <th>Оценка</th>
                     <th>Длительность</th>
                 </tr>
-                <Rows {...props} num={num}/>
+                </thead>
+                <tbody>
+                <Rows {...props} filteredCallsData={props.filteredCallsData} />
                 </tbody>
             </table>
         </>

@@ -3,30 +3,35 @@ import s from "./Table.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 
-const Rows = ({calls, num, getRecord,record}) => {
-     
+const Rows = ({filteredCallsData}) => {
+
     function transformTime(sec) {
-        if(sec >= 3600){
+        if (sec >= 3600) {
             let hours = Math.floor(sec / 60 / 60);
             let minutes = Math.floor(sec / 60) - (hours * 60);
             let seconds = sec % 60;
+            if (seconds < 10) {
+                seconds = '0' + seconds
+            } else if (seconds === 0) {
+                seconds = '00'
+            }
             return hours + ':' + minutes + ':' + seconds;
-        }else if (sec >= 60) {
+        } else if (sec >= 60) {
             let minutes = Math.floor(sec / 60);
             let seconds = sec % 60;
-            if(seconds < 10) {
+            if (seconds < 10) {
                 seconds = '0' + seconds
             }
-            return  minutes + ':' + seconds;
+            return minutes + ':' + seconds;
         }
         return sec
     }
 
     return (
 
-        calls.filter(obj => num === true||num===obj.in_out).map(obj => <tr key={obj.id}   className={s.tr}>
+        filteredCallsData.map(obj => <tr key={obj.id} className={s.tr}>
             {(obj.in_out === '1')
-                ? <td  className={s.type + ' ' + s.outer}>
+                ? <td className={s.type + ' ' + s.outer}>
                     {(obj.status === 'Дозвонился') ? <FontAwesomeIcon icon={faArrowDown} className={s.green}/> :
                         <FontAwesomeIcon icon={faArrowDown} className={s.red}/>
                     }
@@ -42,18 +47,18 @@ const Rows = ({calls, num, getRecord,record}) => {
                 {obj.date}
             </td>
             <td className={s.user}>
-                {obj.person_avatar?<img src={`${obj.person_avatar}`} alt='Аватар'/>:<img src='https://lk.skilla.ru/img/noavatar.jpg' alt='Аватар'/>}
+                {obj.person_avatar ? <img src={`${obj.person_avatar}`} alt='Аватар'/> :
+                    <img src='https://lk.skilla.ru/img/noavatar.jpg' alt='Аватар'/>}
+                <span>{obj.person_name + " " + obj.person_surname}</span>
 
             </td>
             <td className={s.call}>
-                {'+' + obj.from_number}
+                {obj.from_number.includes('sip')&&'Сторонний источник'}
+                {obj.from_number.includes('sip')|| `+${obj.from_number}`}
+
                 {/*{obj.from_number || obj.person_name + ' ' + obj.person_surname}*/}
             </td>
-            <td className={s.source}>
-            </td>
-            <td className={s.rating}>
-                <button onClick={()=>getRecord(obj.record,obj.partnership_id)} className={s.share}>Распознать</button>
-            </td>
+
             <td className={s.duration}>
                 {transformTime(obj.time)}
             </td>

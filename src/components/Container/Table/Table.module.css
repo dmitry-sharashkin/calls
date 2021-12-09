@@ -59,9 +59,16 @@ td{
 
     transform: rotate(225deg);
 }
+.user{
+    display: flex;
+    align-items: center;
+}
 .user img{
     width: 32px;
     height: 32px;
+}
+.user span{
+    margin-left: 1em;
 }
 .rating svg{
     font-size: 8px;

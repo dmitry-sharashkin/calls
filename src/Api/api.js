@@ -7,19 +7,8 @@ instance.defaults.headers.common['Authorization'] = `Bearer qwerty123`
 
 
 export const callsAPI = {
-    getCalls(fromDate = '2021-11-25', toDate = '2021-11-28') {
+    getCalls(fromDate = '2021-12-09', toDate = '2021-12-09') {
         return instance.post(`/getList?date_start=${fromDate}&date_end=${toDate}`).then(res => res.data)
-    },
-    getRecord(record, partnership_id) {
-
-
-        const headers = {
-            'Content-type': 'audio/mpeg, audio/x-mpeg, audio/x-mpeg-3, audio/mpeg3',
-            'Content-Transfer-Encoding': 'binary',
-            'Content-Disposition': 'filename="record.mp3"',
-        }
-
-        return instance.post(`/getRecord?record=${record}&partnership_id=${partnership_id}`, {headers}).then(res => res.data )
     }
 
 }

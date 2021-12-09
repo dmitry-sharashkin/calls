@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown, faSearch} from "@fortawesome/free-solid-svg-icons";
 import s from './../Container.module.css'
 
-const Controls = ({setNum}) => {
+const Controls = ({filterInOutCalls}) => {
     const [showButtons, changeButtons] = useState(false);
 
     function toggleButtons() {
@@ -24,9 +24,9 @@ const Controls = ({setNum}) => {
                         :<div onClick={toggleButtons}>Все типы <FontAwesomeIcon  icon={faChevronDown}/></div>
                     }
                     {showButtons && <div className={s.buttonsContainer}>
-                        <button onClick={() => setNum(true)}>Все типы</button>
-                        <button onClick={() => setNum('0')}>Входящиe</button>
-                        <button onClick={() => setNum('1')}>Исходящие</button>
+                        <button onClick={() => filterInOutCalls('default')}>Все типы</button>
+                        <button onClick={() => filterInOutCalls('0')}>Входящиe</button>
+                        <button onClick={() => filterInOutCalls('1')}>Исходящие</button>
                     </div>}
 
                 </div>
@@ -38,12 +38,6 @@ const Controls = ({setNum}) => {
                 </div>
                 <div className={s.filterBox}>
                     <div>Все источники<FontAwesomeIcon icon={faChevronDown}/></div>
-                </div>
-                <div className={s.filterBox}>
-                    <div>Все оценки<FontAwesomeIcon icon={faChevronDown}/></div>
-                </div>
-                <div className={s.filterBox}>
-                    <div>Все ошибки <FontAwesomeIcon icon={faChevronDown}/></div>
                 </div>
 
             </div>

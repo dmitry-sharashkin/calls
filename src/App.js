@@ -21,7 +21,7 @@ function App() {
 //    const result =  instance.post(`/getRecord?record=MToxMDA2NzYxNToxMjg5NDM2Mjg1Njow&partnership_id=136`, null , {headers}).then(res => res)
 // console.log(result)
     return (
-        <Provider store={store}>
+        <Provider store={store}> 
             <div className="App">
                 <Sidebar/>
                 <div className='appWrapper'>
