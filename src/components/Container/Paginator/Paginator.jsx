@@ -7,11 +7,15 @@ import Calendar from "./Calendar";
 const Paginator = (props) => {
 
     function next() {
+
         props.setToIndex(props.toIndex + props.portionIndex)
         props.setFromIndex(props.fromIndex + props.portionIndex)
     }
 
     function prev() {
+        if (props.fromIndex<props.portionIndex){
+            return
+        }
         props.setToIndex(props.toIndex - props.portionIndex)
         props.setFromIndex(props.fromIndex - props.portionIndex)
     }
