@@ -12,6 +12,9 @@
     align-items: center;
     justify-content: flex-end;
 }
+.downPaginator{
+    margin: 40px 0;
+}
 .iconBtn__wrap{
     background-color: transparent;
     padding: 0;
@@ -112,6 +115,7 @@ color: #0000F4;
 .filters{
     display: flex;
     align-items: center;
+    margin-right: 6px;
 }
 .filters .filterBox:last-child {
     margin-right: 0;

@@ -1,10 +1,40 @@
 import React from "react";
 import s from "../Container.module.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronLeft, faChevronRight, faPlusCircle} from "@fortawesome/free-solid-svg-icons";
+import {faChevronLeft, faChevronRight,} from "@fortawesome/free-solid-svg-icons";
 import Calendar from "./Calendar";
 
 const Paginator = (props) => {
+
+    function next() {
+        props.setToIndex(props.toIndex + props.portionIndex)
+        props.setFromIndex(props.fromIndex + props.portionIndex)
+    }
+
+    function prev() {
+        props.setToIndex(props.toIndex - props.portionIndex)
+        props.setFromIndex(props.fromIndex - props.portionIndex)
+    }
+if (props.down){
+    return <div className={s.downPaginator}>
+        <div className={s.paginatorBalance}>
+            <div className={s.paginator}>
+                <button onClick={prev} className={s.iconBtn + ' ' + s.prev}>
+                    <FontAwesomeIcon icon={faChevronLeft}/>
+                </button>
+                <Calendar {...props}
+                          setToIndex={props.setToIndex}
+                          setFromIndex={props.setFromIndex}
+                          portionIndex={props.portionIndex}
+                />
+                <button  onClick={next} className={s.iconBtn + ' ' + s.next}>
+                    <FontAwesomeIcon icon={faChevronRight}/>
+                </button>
+            </div>
+        </div>
+    </div>
+
+}
     return (
         <div className={s.paginatorBalance}>
             {/*// <div className={s.balance}>*/}
@@ -17,11 +47,11 @@ const Paginator = (props) => {
             {/*// </button>*/}
             {/*// </div>*/}
             <div className={s.paginator}>
-                <button className={s.iconBtn + ' ' + s.prev}>
+                <button onClick={prev} className={s.iconBtn + ' ' + s.prev}>
                     <FontAwesomeIcon icon={faChevronLeft}/>
                 </button>
                 <Calendar {...props}/>
-                <button className={s.iconBtn + ' ' + s.next}>
+                <button  onClick={next} className={s.iconBtn + ' ' + s.next}>
                     <FontAwesomeIcon icon={faChevronRight}/>
                 </button>
             </div>

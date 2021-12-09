@@ -5,6 +5,8 @@ import {getCallsList} from "../../../redux/calls-reducer";
 
 const TableContainer = (props) => {
     const [filteredCallsData, setFilteredCallsData] = useState([]);
+    const [filterValue, setFilterValue] = useState('default');
+
 
     console.log(filteredCallsData)
 
@@ -24,11 +26,28 @@ const TableContainer = (props) => {
         } else {
             setFilteredCallsData(props.calls )
         }
+        setFilterValue(inOut)
     }
+
+    const findFilter = (inOut) => {
+        if (inOut !== 'default') {
+
+            let callsData = props.calls
+            setFilteredCallsData(callsData.filter(obj => inOut === obj.in_out))
+        } else {
+            setFilteredCallsData(props.calls )
+        }
+    }
+
+
 
     return <Table {...props}
                   filteredCallsData={filteredCallsData}
-                  filterInOutCalls={filterInOutCalls}/>
+                  filterInOutCalls={filterInOutCalls}
+                  filterValue={filterValue}
+                  fromIndex={props.fromIndex}
+                  toIndex={props.toIndex}
+    />
 }
 
 const mapStateToProps = (state) => ({

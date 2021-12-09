@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import s from './Header.module.css'
 import {faSearch, faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -6,11 +6,20 @@ import photo from '../../assets/img.png'
 
 
 const Header = () => {
+    const [fromDate,setFromDate]= useState();
+    useEffect(()=>{
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        let yyyy = today.getFullYear();
+
+        setFromDate(`${dd}.${mm}.${yyyy}`)
+    },[])
     return (
         <header>
             <div className={s.container}>
                 <div className={s.left}>
-                    <time  className={s.time}>Cреда, 13 окт</time>
+                    <time  className={s.time}>{fromDate}</time>
                     <div className={s.analytics}>
                         <div className={s.analyticsItem}>
                             <div className={s.text}>Новые звонки <span className={s.green}>20 из 30 шт</span></div>

@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown, faSearch} from "@fortawesome/free-solid-svg-icons";
 import s from './../Container.module.css'
 
-const Controls = ({filterInOutCalls}) => {
+const Controls = ({filterInOutCalls,filterValue }) => {
     const [showButtons, changeButtons] = useState(false);
 
     function toggleButtons() {
@@ -20,26 +20,23 @@ const Controls = ({filterInOutCalls}) => {
             <div className={s.filters}>
                 <div className={s.filterBox}>
                     {showButtons
-                        ?<div className={s.d} onClick={toggleButtons}>Все типы <FontAwesomeIcon  icon={faChevronDown}/></div>
+                        ?<div className={s.d} onClick={toggleButtons}>
+                            {filterValue==='default'&& 'Все типы '}
+                            {filterValue==='0'&& 'Входящиe'}
+                            {filterValue==='1'&& 'Исходящие'}
+
+                            <FontAwesomeIcon  icon={faChevronDown}/>
+
+                    </div>
                         :<div onClick={toggleButtons}>Все типы <FontAwesomeIcon  icon={faChevronDown}/></div>
                     }
                     {showButtons && <div className={s.buttonsContainer}>
-                        <button onClick={() => filterInOutCalls('default')}>Все типы</button>
+                        <button onClick={() => filterInOutCalls('default')}>Все звонки</button>
                         <button onClick={() => filterInOutCalls('0')}>Входящиe</button>
                         <button onClick={() => filterInOutCalls('1')}>Исходящие</button>
                     </div>}
 
                 </div>
-                <div className={s.filterBox}>
-                    <div>Все сотрудники <FontAwesomeIcon icon={faChevronDown}/></div>
-                </div>
-                <div className={s.filterBox}>
-                    <div>Все звонки<FontAwesomeIcon icon={faChevronDown}/></div>
-                </div>
-                <div className={s.filterBox}>
-                    <div>Все источники<FontAwesomeIcon icon={faChevronDown}/></div>
-                </div>
-
             </div>
         </div>
     )

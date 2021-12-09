@@ -23,7 +23,7 @@ const Sidebar = () => {
             <nav>
                 <ul>
 
-                    <li className={s.logoBox}><img src={logo}/></li>
+                    <li className={s.logoBox}><img src={logo} alt='logo'/></li>
                     <li className={s.item}><FontAwesomeIcon className={s.icon} icon={faChartLine}/>Итоги</li>
                     <li className={s.item}><FontAwesomeIcon className={s.icon} icon={faCheckDouble}/>Заказы</li>
                     <li className={s.item}><FontAwesomeIcon className={s.icon} icon={faEnvelope}/>Сообщения</li>

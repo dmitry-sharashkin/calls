@@ -1,16 +1,19 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import s from "../Container.module.css";
 import {faCalendar} from "@fortawesome/free-regular-svg-icons";
 
-const Calendar = ({getCallsList}) => {
+const Calendar = ({getCallsList,setFromIndex,setToIndex,portionIndex}) => {
     const [showButtons, changeButtons] = useState(false);
+    const [calendarValue, setCalendarValue] = useState(0);
 
     function toggleButtons() {
         showButtons ? changeButtons(false) : changeButtons(true);
     }
-
-    function setDate(variant,pagination) {
+useEffect(()=>{
+    setDate(0)
+},[])
+    function setDate(variant) {
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
         let mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -54,16 +57,20 @@ const Calendar = ({getCallsList}) => {
         let toDate = `${d}.${m}.${yyy}`;
 
 
-        console.log(fromDate);
-        console.log(toDate);
         getCallsList(toDate, fromDate)
+        setCalendarValue(variant)
+        setFromIndex(0)
+        setToIndex(portionIndex)
     }
 
     return (<>
         {/*<span onClick={() => getCallsList('30.11.2021', '1.12.2021')}><FontAwesomeIcon*/}
         {/*    className={s.iconBtn + ' ' + s.calendar} icon={faCalendar}/> 3 дня</span>*/}
         <span onClick={toggleButtons}><FontAwesomeIcon
-            className={s.iconBtn + ' ' + s.calendar} icon={faCalendar}/>3 дня
+            className={s.iconBtn + ' ' + s.calendar} icon={faCalendar}/>
+            {calendarValue===0&&'3 дня'}
+            {calendarValue===1&&'Неделя'}
+            {calendarValue===2&&'Месяц'}
             </span>
         {showButtons && <div className={s.buttonsContainer}>
             <button onClick={() => setDate(0)}>3 дня</button>
