@@ -10,6 +10,8 @@ const Table = (props) => {
 
     return (
         <>
+
+            <button onClick={()=>props.searchCalls('татьяна')}>sdfsffs</button>
             <Controls
                 filterValue={props.filterValue}
                 filterInOutCalls={props.filterInOutCalls}
