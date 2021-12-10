@@ -49,7 +49,6 @@ const Rows = ({filteredCallsData,toIndex,fromIndex}) => {
                         </td>
                         <td className={s.user}>
 
-                            {index}
                             {obj.person_avatar ? <img src={`${obj.person_avatar}`} alt='Аватар'/> :
                                 <img src='https://lk.skilla.ru/img/noavatar.jpg' alt='Аватар'/>}
                             <span>{obj.person_name + " " + obj.person_surname}</span>
@@ -66,7 +65,7 @@ const Rows = ({filteredCallsData,toIndex,fromIndex}) => {
                             {transformTime(obj.time)}
                         </td>
                     </tr>
-                    : ''
+                    : null
             }
         )
     )

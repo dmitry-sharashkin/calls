@@ -7,38 +7,42 @@ import Calendar from "./Calendar";
 const Paginator = (props) => {
 
     function next() {
+        if (props.toIndex >= props.callsListLength) {
+            return
+        }
 
         props.setToIndex(props.toIndex + props.portionIndex)
         props.setFromIndex(props.fromIndex + props.portionIndex)
     }
 
     function prev() {
-        if (props.fromIndex<props.portionIndex){
+        if (props.fromIndex < props.portionIndex) {
             return
         }
         props.setToIndex(props.toIndex - props.portionIndex)
         props.setFromIndex(props.fromIndex - props.portionIndex)
     }
-if (props.down){
-    return <div className={s.downPaginator}>
-        <div className={s.paginatorBalance}>
-            <div className={s.paginator}>
-                <button onClick={prev} className={s.iconBtn + ' ' + s.prev}>
-                    <FontAwesomeIcon icon={faChevronLeft}/>
-                </button>
-                <Calendar {...props}
-                          setToIndex={props.setToIndex}
-                          setFromIndex={props.setFromIndex}
-                          portionIndex={props.portionIndex}
-                />
-                <button  onClick={next} className={s.iconBtn + ' ' + s.next}>
-                    <FontAwesomeIcon icon={faChevronRight}/>
-                </button>
+
+    if (props.down) {
+        return <div className={s.downPaginator}>
+            <div className={s.paginatorBalance}>
+                <div className={s.paginator}>
+                    <button onClick={prev} className={s.iconBtn + ' ' + s.prev}>
+                        <FontAwesomeIcon icon={faChevronLeft}/>
+                    </button>
+                    <Calendar {...props}
+                              setToIndex={props.setToIndex}
+                              setFromIndex={props.setFromIndex}
+                              portionIndex={props.portionIndex}
+                    />
+                    <button onClick={next} className={s.iconBtn + ' ' + s.next}>
+                        <FontAwesomeIcon icon={faChevronRight}/>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-}
+    }
     return (
         <div className={s.paginatorBalance}>
             {/*// <div className={s.balance}>*/}
@@ -55,7 +59,7 @@ if (props.down){
                     <FontAwesomeIcon icon={faChevronLeft}/>
                 </button>
                 <Calendar {...props}/>
-                <button  onClick={next} className={s.iconBtn + ' ' + s.next}>
+                <button onClick={next} className={s.iconBtn + ' ' + s.next}>
                     <FontAwesomeIcon icon={faChevronRight}/>
                 </button>
             </div>

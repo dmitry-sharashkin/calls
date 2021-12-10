@@ -61,6 +61,7 @@ useEffect(()=>{
         setCalendarValue(variant)
         setFromIndex(0)
         setToIndex(portionIndex)
+        changeButtons(false)
     }
 
     return (<>

@@ -21,14 +21,14 @@ const Controls = ({filterInOutCalls,filterValue }) => {
                 <div className={s.filterBox}>
                     {showButtons
                         ?<div className={s.d} onClick={toggleButtons}>
-                            {filterValue==='default'&& 'Все типы '}
+                            {filterValue==='default'&& 'Все звонки'}
                             {filterValue==='0'&& 'Входящиe'}
                             {filterValue==='1'&& 'Исходящие'}
 
                             <FontAwesomeIcon  icon={faChevronDown}/>
 
                     </div>
-                        :<div onClick={toggleButtons}>Все типы <FontAwesomeIcon  icon={faChevronDown}/></div>
+                        :<div onClick={toggleButtons}>Все звонки <FontAwesomeIcon  icon={faChevronDown}/></div>
                     }
                     {showButtons && <div className={s.buttonsContainer}>
                         <button onClick={() => filterInOutCalls('default')}>Все звонки</button>
