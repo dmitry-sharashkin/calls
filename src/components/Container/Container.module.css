@@ -1,21 +1,24 @@
 
-.mainContainer{
+.mainContainer {
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 36px;
     padding-right: 10px;
     padding-left: 10px;
 }
-.paginatorBalance{
+
+.paginatorBalance {
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-.downPaginator{
+
+.downPaginator {
     margin: 40px 0;
 }
-.iconBtn__wrap{
+
+.iconBtn__wrap {
     background-color: transparent;
     padding: 0;
     margin: 0;
@@ -23,7 +26,8 @@
     border: none;
     display: flex;
 }
-.balance{
+
+.balance {
     display: flex;
     align-items: center;
     padding: 9px 12px;
@@ -32,12 +36,14 @@
     margin-right: 48px;
 
 }
-.money{
+
+.money {
     font-weight: 600;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 16px;
 }
-.balanceText{
+
+.balanceText {
 
     font-family: inherit;
     font-style: normal;
@@ -45,55 +51,66 @@
     font-size: 14px;
     margin-right: 10px;
 }
+
 .balance:hover .balanceText,
-.balance:hover .iconBtn__wrap .iconBtn{
-color: #0000F4;
+.balance:hover .iconBtn__wrap .iconBtn {
+    color: #0000F4;
 }
-.balanceText__helper{
+
+.balanceText__helper {
     color: #899CB1;
 }
-.iconBtn__wrap{
+
+.iconBtn__wrap {
     color: #005FF8;
     font-size: 22px;
 }
-.paginator{
+
+.paginator {
     display: flex;
     align-items: center;
     line-height: 1;
     position: relative;
 }
-.paginator .iconBtn{
+
+.paginator .iconBtn {
     font-size: 10px;
     color: #ADBFDF;
 }
-.paginator span{
+
+.paginator span {
     color: #005FF8;
     font-size: 15px;
     display: flex;
     align-items: center;
 
 }
-.paginator .calendar{
+
+.paginator .calendar {
     font-size: 18px;
     margin-right: 8px;
 }
-.paginator .prev{
+
+.paginator .prev {
     margin-right: 21px;
     background-color: transparent;
     border: none;
 }
-.paginator .next{
+
+.paginator .next {
     margin-left: 21px;
     background-color: transparent;
     border: none;
 }
+
 .paginator button:hover,
 .paginator span:hover svg,
-.paginator span:hover{
+.paginator span:hover {
     color: #005FF8;
     cursor: pointer;
 }
-.controls{
+
+.controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,70 +119,112 @@ color: #0000F4;
 
     margin-top: 34px;
 }
-.search{
+
+.search {
     display: flex;
     align-items: center;
 }
-.search svg{
+
+.search svg {
     margin-right: 8px;
     color: #ADBFDF;
     font-size: 16px;
 }
 
-.filters{
+.search button {
+    margin-left: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background-color: white;
+    font-size: 16px;
+    padding: 4px 13px;
+
+}
+.search button:hover {
+
+    border: 1px solid #091336;
+}
+
+.search input:focus {
+    border: 1px solid #091336;
+    outline: none;
+
+}
+
+.search input {
+
+    font-size: 16px;
+    width: 300px;
+    height: 26px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
+.filters {
     display: flex;
     align-items: center;
     margin-right: 6px;
 }
+
 .filters .filterBox:last-child {
     margin-right: 0;
 }
-.filterBox{
+
+.filterBox {
     margin-right: 36px;
     cursor: pointer;
 
     position: relative;
 
 }
-.filterBox svg{
+
+.filterBox svg {
     margin-left: 8px;
     font-size: 10px;
     color: #ADBFDF;
 }
-.d svg{
+
+.d svg {
     transform: rotate(180deg);
 }
- .buttonsContainer{
+
+.buttonsContainer {
     color: red;
     box-shadow: 0 0 26px rgba(233, 237, 243, 0.8);
     background-color: white;
-     position: absolute;
-     top: calc(100% + 8px);
-     right: 0;
-     border: 1px solid #EAF0FA;
-     border-radius: 4px;
-     min-width: 200px;
-     z-index: 3;
-     box-sizing: border-box;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    border: 1px solid #EAF0FA;
+    border-radius: 4px;
+    min-width: 200px;
+    z-index: 3;
+    box-sizing: border-box;
 }
- .buttonsContainer button{
-     display: block;
-     padding: 10px 20px;
-     background-color: transparent;
-     font-size: 14px;
-     margin:0;
-     color: #899CB1;
-     border: none;
-     width: 100%;
-     text-align: left;
- }
-.buttonsContainer button:hover{
-background-color: rgba(0,95,248,0.13);
+
+.buttonsContainer button {
+    display: block;
+    padding: 10px 20px;
+    background-color: transparent;
+    font-size: 14px;
+    margin: 0;
+    color: #899CB1;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.buttonsContainer button:hover {
+    background-color: rgba(0, 95, 248, 0.13);
     color: #122945;
 }
+
 .filterBox:hover,
 .filterBox:hover svg,
 .filterBox.active,
-.filterBox.active svg{
+.filterBox.active svg {
     color: #005FF8;
 }

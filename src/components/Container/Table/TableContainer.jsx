@@ -6,7 +6,6 @@ import {getCallsList, setCallsListLength} from "../../../redux/calls-reducer";
 const TableContainer = (props) => {
     const [filteredCallsData, setFilteredCallsData] = useState([]);
     const [filterValue, setFilterValue] = useState('default');
-    console.log(filteredCallsData)
 
     useEffect(() => {
         props.getCallsList()
@@ -33,21 +32,24 @@ const TableContainer = (props) => {
     }
 
     const searchCalls = (input) => {
+        if (input === '') {
+            setFilteredCallsData(props.calls)
+            return
+        }
 
-        setFilteredCallsData(filteredCallsData.filter(obj =>  obj.person_name.toLowerCase().includes(input.toLowerCase()) ))
+        setFilteredCallsData(filteredCallsData.filter(obj => obj.from_number.includes(input.toLowerCase()) || obj.person_name.toLowerCase().includes(input.toLowerCase())))
 
     }
 
 
-
-return <Table {...props}
-              filteredCallsData={filteredCallsData}
-              filterInOutCalls={filterInOutCalls}
-              filterValue={filterValue}
-              fromIndex={props.fromIndex}
-              toIndex={props.toIndex}
-              searchCalls={searchCalls}
-/>
+    return <Table {...props}
+                  filteredCallsData={filteredCallsData}
+                  filterInOutCalls={filterInOutCalls}
+                  filterValue={filterValue}
+                  fromIndex={props.fromIndex}
+                  toIndex={props.toIndex}
+                  searchCalls={searchCalls}
+    />
 }
 
 const mapStateToProps = (state) => ({

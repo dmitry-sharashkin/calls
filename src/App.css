@@ -6,8 +6,9 @@
 .App{
 background-color: #F1F4F9;
     display: flex;
-
 }
 .appWrapper{
     width: calc(100% - 240px);
+
+    padding-bottom: 40px;
 }

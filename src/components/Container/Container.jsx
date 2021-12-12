@@ -17,13 +17,7 @@ const Container = () => {
                 setFromIndex={setFromIndex}
                 portionIndex={portionIndex}/>
             <TableContainer fromIndex={fromIndex} toIndex={toIndex}/>
-            <PaginatorContainer
-                down={true}
-                toIndex={toIndex}
-                fromIndex={fromIndex}
-                setToIndex={setToIndex}
-                setFromIndex={setFromIndex}
-                portionIndex={portionIndex}/>
+
         </main>
     )
 }
